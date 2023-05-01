@@ -1,7 +1,8 @@
 import { Form, Label, Input, Button } from './UserForm.styled';
 import { useState } from 'react';
-import { addContacts, getContacts } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
+import { getContacts } from 'redux/selectors';
 
 const UserForm = () => {
   const [name, setName] = useState('');
@@ -34,7 +35,7 @@ const UserForm = () => {
       return;
     }
 
-    dispatch(addContacts(name, number));
+    dispatch(addContact({ name, number }));
 
     reset();
   };

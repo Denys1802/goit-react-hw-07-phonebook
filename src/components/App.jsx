@@ -18,9 +18,10 @@ const App = () => {
       <Section>
         <h1>Phonebook</h1>
         <UserForm />
-        {isLoading && !error && <b>Request in progress...</b>}
+
         <h2>Contacts</h2>
         <Filter />
+        {isLoading && !error && <b>Request in progress...</b>}
         <Contacts />
       </Section>
     </>

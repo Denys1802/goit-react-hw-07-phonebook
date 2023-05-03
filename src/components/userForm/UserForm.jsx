@@ -26,7 +26,7 @@ const UserForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (
-      [contacts].find(el => {
+      contacts.find(el => {
         return el.name === name;
       })
     ) {

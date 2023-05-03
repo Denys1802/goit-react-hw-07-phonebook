@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
 const pendingReducer = state => {
@@ -10,10 +10,10 @@ const rejectedReducer = (state, { payload }) => {
   state.error = payload;
 };
 
-const fulfilledReducer = state => {
-  state.isLoading = false;
-  state.error = null;
-};
+// const fulfilledReducer = state => {
+//   state.isLoading = false;
+//   state.error = null;
+// };
 
 // const extraActions = [fetchContacts, addContact, deleteContact];
 // console.log(extraActions);

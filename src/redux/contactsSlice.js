@@ -10,15 +10,6 @@ const rejectedReducer = (state, { payload }) => {
   state.error = payload;
 };
 
-// const fulfilledReducer = state => {
-//   state.isLoading = false;
-//   state.error = null;
-// };
-
-// const extraActions = [fetchContacts, addContact, deleteContact];
-// console.log(extraActions);
-// const getActions = type => extraActions.map(action => action[type]);
-
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
@@ -51,10 +42,6 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.rejected, rejectedReducer)
       .addCase(addContact.rejected, rejectedReducer)
       .addCase(deleteContact.rejected, rejectedReducer);
-
-    // .addMatcher(isAnyOf(...getActions('pending)'), pendingReducer))
-    // .addMatcher(isAnyOf(...getActions('rejected'), rejectedReducer))
-    // .addMatcher(isAnyOf(...getActions('fulfilled'), fulfilledReducer));
   },
 });
 

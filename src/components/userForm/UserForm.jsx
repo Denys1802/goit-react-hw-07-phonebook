@@ -2,14 +2,14 @@ import { Form, Label, Input, Button } from './UserForm.styled';
 import { useState } from 'react';
 import { addContact } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 
 const UserForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const handleChange = (value, name) => {
     switch (name) {
